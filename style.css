@@ -20,7 +20,7 @@ main {
     padding: 1rem;
 }
 
-main, section, #frame, .logo {
+main, section, #frame, .logo, #display div {
     display: flex;
 }
 
@@ -69,4 +69,9 @@ main, section, #frame, .logo {
 #display {
     flex-basis: 25%;
     justify-content: space-between;
+}
+
+#display div {
+    align-items: center;
+    overflow: auto;
 }
