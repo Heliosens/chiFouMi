@@ -4,36 +4,44 @@
     <meta charset="UTF-8">
     <title>Chi Fou Mi</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b3c591f1b4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main>
-        <section>
+        <section id="game">
             <div id="frame">
                 <div></div>
                 <div></div>
             </div>
             <div>
                 <div>
-                    <div id="userLogo"></div>
-                    <div class="text">
+                    <div class="logo">
+                        <i class="far fa-smile"></i>
                         <p>Vous : <span class="point">0</span> points</p>
                     </div>
                 </div>
                 <div>
-                    <div id="computerLogo"></div>
-                    <div class="text">
+                    <div class="logo">
+                        <i class="fas fa-robot"></i>
                         <p>Ordinateur : <span class="point">0</span> points</p>
                     </div>
                 </div>
             </div>
-            <div>
-                <div class="hand"></div>
-                <div class="hand"></div>
-                <div class="hand"></div>
+            <div id="minFrame">
+                <a class="hand">
+                    <img src="paper.png" alt="symbole du papier">
+                </a>
+                <a class="hand">
+                    <img src="scisors.png" alt="symbole des ciseaux">
+                </a>
+                <a class="hand">
+                    <img src="stone.png" alt="symbole de la pierre">
+                </a>
             </div>
         </section>
-        <section>
+
+        <section id="display">
             <div>
                 <span id="user">Vous</span>
                 <div>...</div>
