@@ -1,18 +1,21 @@
-// get frame to display gamer choice
+// get frame to display player & computer choice
 let frames = document.getElementById('frame').getElementsByTagName('div');
 
-// get hands to listen
+// get hands to listen player choice
 let hands = document.getElementsByClassName('hand');
 
-// set background url
+// set hands background img url
 let img = [
     "url('paper.png')",
     "url('scissor.png')",
     "url('stone.png')"
 ];
 
-// get display to display result
+// to display result
 let result = document.getElementById('result');
+let points = document.getElementsByClassName('point');
+
+// in historic
 let user = document.getElementById('user');
 let comp = document.getElementById('comp');
 let win = document.getElementById('win');
@@ -40,25 +43,31 @@ for( let hand of hands){
                 case hands[0].style.backgroundImage :                                           // case paper
                     if(frames[1].style.backgroundImage === hands[1].style.backgroundImage){     // vs scissor
                         result.innerHTML = "Computer win";
+                        points[1].innerHTML = (parseInt(points[1].innerHTML) + 1).toString();
                     }
                     else if (frames[1].style.backgroundImage === hands[2].style.backgroundImage){   // vs stone
                         result.innerHTML = "You win !!!";
+                        points[0].innerHTML = (parseInt(points[0].innerHTML) + 1).toString();
                     }
                     break;
                 case hands[1].style.backgroundImage :                                           // case scissor
                     if(frames[1].style.backgroundImage === hands[0].style.backgroundImage){     // vs paper
                         result.innerHTML = "You win !!!";
+                        points[0].innerHTML = (parseInt(points[0].innerHTML) + 1).toString();
                     }
                     else if (frames[1].style.backgroundImage === hands[2].style.backgroundImage){   // vs stone
                         result.innerHTML = "Computer win";
+                        points[1].innerHTML = (parseInt(points[1].innerHTML) + 1).toString();
                     }
                     break;
                 case hands[2].style.backgroundImage :                                           // case stone
                     if(frames[1].style.backgroundImage === hands[0].style.backgroundImage){     // vs paper
                         result.innerHTML = "Computer win";
+                        points[1].innerHTML = (parseInt(points[1].innerHTML) + 1).toString();
                     }
                     else if (frames[1].style.backgroundImage === hands[1].style.backgroundImage){   // vs scissor
                         result.innerHTML = "You win !!!";
+                        points[0].innerHTML = (parseInt(points[0].innerHTML) + 1).toString();
                     }
                     break;
             }
