@@ -12,6 +12,7 @@ html {
 body {
     width: 100%;
     font-size: 3rem;
+    text-align: center;
 }
 
 main {
@@ -50,6 +51,15 @@ main, section, #frame, .logo, #minFrame, #display div {
     background-repeat: no-repeat;
 }
 
+#result {
+    visibility: hidden;
+    border: red 3px double;
+    width: 50%;
+    height: 4rem;
+    border-radius: 10px;
+    color: red;
+}
+
 .logo {
     margin: 1rem auto;
     justify-content: flex-end;
@@ -59,18 +69,6 @@ main, section, #frame, .logo, #minFrame, #display div {
 .logo i {
     margin: 1rem;
     font-size: 3vw;
-}
-
-#minFrame div:first-child {
-    background-image: url("paper.png");
-}
-
-#minFrame div:nth-child(2) {
-    background-image: url("scisors.png");
-}
-
-#minFrame div:last-child {
-    background-image: url("stone.png");
 }
 
 #minFrame div {
