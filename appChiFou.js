@@ -1,6 +1,6 @@
 // get frame to display gamer choice
-let frame = document.getElementById('frame');
-
+let frames = document.getElementById('frame').getElementsByTagName('div');
+console.log(frames)
 // get hands to listen
 let hands = document.getElementsByClassName('hand');
 // get display to display result
@@ -12,7 +12,12 @@ let win = document.getElementById('win');
 // check winner
 // count point -> display
 // display result
-
+for( let hand of hands){
+    hand.addEventListener('click', function (){
+        frames[0].style.backgroundImage = "url('stone.png')"; // user choice url;
+        frames[1].style.backgroundImage = "url('paper.png')"; // random choice url;
+    })
+}
 
 // function computer choice
 function computerChoice () {
