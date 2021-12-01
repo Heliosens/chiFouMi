@@ -19,13 +19,14 @@ main {
     width: 90%;
     margin: auto;
     padding: 1rem;
+    justify-content: space-around;
 }
 
-main, section, #frame, .logo, #minFrame, #display div {
+main, section, #frame, .logo, #minFrame, #historic div {
     display: flex;
 }
 
-#game, #display div {
+#game, #historic div {
     flex-direction: column;
 }
 
@@ -52,9 +53,8 @@ main, section, #frame, .logo, #minFrame, #display div {
 }
 
 #result {
-    visibility: hidden;
-    border: red 3px double;
-    width: 50%;
+    border: red 4px double;
+    width: 30%;
     height: 4rem;
     border-radius: 10px;
     color: red;
@@ -62,7 +62,7 @@ main, section, #frame, .logo, #minFrame, #display div {
 
 .logo {
     margin: 1rem auto;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: baseline;
 }
 
@@ -83,12 +83,13 @@ main, section, #frame, .logo, #minFrame, #display div {
     background-position: bottom;
 }
 
-#display {
-    flex-basis: 25%;
+#historic {
+    flex-basis: 20%;
     justify-content: space-between;
 }
 
-#display div {
+#historic div {
     align-items: center;
     overflow: auto;
 }
+
