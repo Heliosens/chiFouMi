@@ -14,12 +14,9 @@ let img = [
 // to display result
 let result = document.getElementById('result');
 let points = document.getElementsByClassName('point');
+let historic = document.getElementById('historic');
 
-// in historic
-let user = document.getElementById('user');
-let comp = document.getElementById('comp');
-let win = document.getElementById('win');
-
+// display symbols
 for(let i = 0 ; i < hands.length ; i++){
     hands[i].style.backgroundImage = img[i];
 }
@@ -76,3 +73,11 @@ for( let i = 0 ; i < hands.length ; i++){
     })
 }
 
+function addResult (x,i,w){
+    let items = [x, i];
+    for(let item of items){
+        let div = document.createElement("div");
+        div.style.backgroundImage = hands[item].style.backgroundImage;
+        historic.appendChild(div);
+    }
+}
