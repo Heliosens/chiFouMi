@@ -22,7 +22,7 @@ main {
     justify-content: space-around;
 }
 
-main, section, #frame, .logo, #minFrame, #historic div {
+main, section, #frame, .logo, #hand, #historic div {
     display: flex;
 }
 
@@ -71,13 +71,13 @@ main, section, #frame, .logo, #minFrame, #historic div {
     font-size: 3vw;
 }
 
-#minFrame div {
+#hand div {
     width: 18rem;
     padding-bottom: 18rem;
     margin: 1rem;
 }
 
-#minFrame div {
+#hand div {
     border: 1px solid black;
     background-repeat: no-repeat;
     background-position: bottom;

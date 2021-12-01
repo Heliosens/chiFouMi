@@ -2,7 +2,7 @@
 let frames = document.getElementById('frame').getElementsByTagName('div');
 
 // get hands to listen player choice
-let hands = document.getElementsByClassName('hand');
+let hands = document.getElementById("hand").getElementsByTagName('div');
 
 // set hands background img url
 let img = [
@@ -27,45 +27,46 @@ for(let i = 0 ; i < hands.length ; i++){
 // on click display user & computer choice
 // count point -> display
 // display result
-for( let hand of hands){
-    hand.addEventListener('click', function (){
+for( let i = 0 ; i < hands.length ; i++){
+    hands[i].addEventListener('click', function (){
         // user choice
-        frames[0].style.backgroundImage = hand.style.backgroundImage;
+        frames[0].style.backgroundImage = hands[i].style.backgroundImage;
         // computer random
-        frames[1].style.backgroundImage = img[Math.floor(Math.random() * hands.length)]; // random choice url;
+        let x = Math.floor(Math.random() * hands.length);
+        frames[1].style.backgroundImage = img[x]; // random choice url;
 
         // check winner
-        if (frames[0].style.backgroundImage === frames[1].style.backgroundImage){
+        if (i === x){
             result.innerHTML = "Match nul";
         }
         else {
-            switch (hand.style.backgroundImage){        // switch of player choice
-                case hands[0].style.backgroundImage :                                           // case paper
-                    if(frames[1].style.backgroundImage === hands[1].style.backgroundImage){     // vs scissor
+            switch (i){        // switch of player choice
+                case 0 :                                           // case paper
+                    if(x === 1){     // vs scissor
                         result.innerHTML = "Computer win";
                         points[1].innerHTML = (parseInt(points[1].innerHTML) + 1).toString();
                     }
-                    else if (frames[1].style.backgroundImage === hands[2].style.backgroundImage){   // vs stone
+                    else if (x === 2){   // vs stone
                         result.innerHTML = "You win !!!";
                         points[0].innerHTML = (parseInt(points[0].innerHTML) + 1).toString();
                     }
                     break;
-                case hands[1].style.backgroundImage :                                           // case scissor
-                    if(frames[1].style.backgroundImage === hands[0].style.backgroundImage){     // vs paper
+                case 1 :                                           // case scissor
+                    if(x === 0){     // vs paper
                         result.innerHTML = "You win !!!";
                         points[0].innerHTML = (parseInt(points[0].innerHTML) + 1).toString();
                     }
-                    else if (frames[1].style.backgroundImage === hands[2].style.backgroundImage){   // vs stone
+                    else if (x === 2){   // vs stone
                         result.innerHTML = "Computer win";
                         points[1].innerHTML = (parseInt(points[1].innerHTML) + 1).toString();
                     }
                     break;
-                case hands[2].style.backgroundImage :                                           // case stone
-                    if(frames[1].style.backgroundImage === hands[0].style.backgroundImage){     // vs paper
+                case 2 :                                           // case stone
+                    if(x === 0){     // vs paper
                         result.innerHTML = "Computer win";
                         points[1].innerHTML = (parseInt(points[1].innerHTML) + 1).toString();
                     }
-                    else if (frames[1].style.backgroundImage === hands[1].style.backgroundImage){   // vs scissor
+                    else if (x === 1){   // vs scissor
                         result.innerHTML = "You win !!!";
                         points[0].innerHTML = (parseInt(points[0].innerHTML) + 1).toString();
                     }
