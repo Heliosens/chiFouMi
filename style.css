@@ -22,33 +22,45 @@ main {
     justify-content: space-around;
 }
 
-main, section, #frame, #result, .logo, #hand, #historic div {
+main, section, #frame, .side, .side div, #result, #hand, #historic div {
     display: flex;
 }
 
 #game {
     flex-direction: column;
-}
-
-#game {
-    height: 95vh;
     flex-basis: 75%;
     justify-content: space-evenly;
     align-items: center;
 }
 
 #frame {
-    width: 80%;
-    justify-content: space-evenly;
+    width: 100%;
 }
 
-#frame i {
-    font-size: 8rem;
+.side {
+    width: 50%;
+    justify-content: center;
+    align-items: center;
 }
 
-#frame div {
-    width: 30rem;
-    padding-bottom: 30rem;
+.side div:first-child {
+    width: 20%;
+    flex-direction: column;
+}
+
+.point {
+    margin-top: 1rem;
+    border: 1px black solid;
+    font-size: 3vw;
+}
+
+.side div i {
+    font-size: 5vw;
+}
+
+.player {
+    width: 50%;
+    padding-bottom: 40%;
     border: 1px solid black;
     margin: 1rem;
     background-size: contain;
@@ -56,32 +68,27 @@ main, section, #frame, #result, .logo, #hand, #historic div {
     background-repeat: no-repeat;
 }
 
+h1 {
+    margin: 5vh;
+    font-size: 10vh;
+}
+
 #result {
     width: 100%;
     justify-content: center;
 }
 
-#result p {
-    flex-basis: 20%;
+#result span {
+    margin: 1rem;
+    flex-basis: 33%;
     border: red 4px double;
     border-radius: 10px;
     color: red;
 }
 
-.logo {
-    margin: 1rem auto;
-    justify-content: center;
-    align-items: baseline;
-}
-
-.logo i {
-    margin: 1rem;
-    font-size: 3vw;
-}
-
 #hand div {
-    width: 18rem;
-    padding-bottom: 18rem;
+    width: 18vw;
+    height: 22vh;
     margin: 1rem;
 }
 
