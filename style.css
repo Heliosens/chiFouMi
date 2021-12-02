@@ -11,19 +11,17 @@ html {
 
 body {
     width: 100%;
-    font-size: 3rem;
     text-align: center;
-}
-
-main {
-    width: 90%;
-    margin: auto;
-    padding: 1rem;
-    justify-content: space-around;
 }
 
 main, section, #frame, .side, .side div, #result, #hand, #historic div {
     display: flex;
+}
+
+main {
+    margin: auto;
+    padding: 1rem;
+    justify-content: space-around;
 }
 
 #game {
@@ -41,6 +39,7 @@ main, section, #frame, .side, .side div, #result, #hand, #historic div {
     width: 50%;
     justify-content: center;
     align-items: center;
+    font-size: 5vw;
 }
 
 .side div:first-child {
@@ -54,13 +53,9 @@ main, section, #frame, .side, .side div, #result, #hand, #historic div {
     font-size: 3vw;
 }
 
-.side div i {
-    font-size: 5vw;
-}
-
 .player {
-    width: 50%;
-    padding-bottom: 40%;
+    width: 45%;
+    padding-bottom: 45%;
     border: 1px solid black;
     margin: 1rem;
     background-size: contain;
@@ -69,13 +64,14 @@ main, section, #frame, .side, .side div, #result, #hand, #historic div {
 }
 
 h1 {
-    margin: 5vh;
+    margin-bottom: 5vh;
     font-size: 10vh;
 }
 
 #result {
     width: 100%;
     justify-content: center;
+    font-size: 2vw;
 }
 
 #result span {
@@ -84,30 +80,101 @@ h1 {
     border: red 4px double;
     border-radius: 10px;
     color: red;
+    visibility: hidden;
+}
+
+#hand {
+    width: 100%;
 }
 
 #hand div {
-    width: 18vw;
-    height: 22vh;
+    width: 33%;
+    padding-bottom: 33%;
     margin: 1rem;
 }
 
 #hand div {
     border: 1px solid black;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: center;
+    background-size: contain;
 }
 
 #historic {
+    font-size: 2vw;
     flex-basis: 20%;
+    flex-direction: column;
+    border: 1px dashed black;
+}
+
+#chrono {
+    max-height: 79vh;
+    overflow: auto;
+    border: none;
     flex-direction: column;
 }
 
-#historic div {
-    overflow: auto;
+#historic div span {
+    width: 33%;
 }
 
-#historic div div {
-    width: 30%;
+.time {
+    align-items: center;
 }
 
+.time div {
+    width: 33%;
+    height: 5vh;
+    justify-content: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 800px){
+    main {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 8vh;
+    }
+
+    .side {
+        flex-direction: column;
+        font-size: 10vw;
+    }
+
+    .side div:first-child {
+        width: 30%;
+    }
+
+    #historic {
+        width: 80%;
+        margin: auto;
+    }
+
+    #chrono {
+        max-height: 30vh;
+    }
+}
+
+@media screen and (max-width: 600px){
+
+    .player {
+        width: 60%;
+        padding-bottom: 60%;
+    }
+
+    #hand div {
+        width: 28vw;
+    }
+}
+
+@media screen and (max-width: 400px){
+
+    h1 {
+        font-size: 6vh;
+    }
+}
