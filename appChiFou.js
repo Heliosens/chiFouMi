@@ -12,7 +12,7 @@ let img = [
 ];
 
 // to display result
-let result = document.getElementById('result');     // red frame
+let result = document.getElementById('result').getElementsByTagName("p");     // red frame
 let points = document.getElementsByClassName('point');    // number of points
 let historic = document.getElementById('historic');    // choice user & comp + winner
 
@@ -38,17 +38,6 @@ for( let i = 0 ; i < hands.length ; i++){
         }
         else {
             let w = i === 0 && x === 1 ? 1 : i === 1 && x === 2 ? 1 : i === 2 && x === 0 ? 1 : 0;
-            // switch (i){        // switch of player choice
-            //     case 0 :                                       // case paper
-            //         w = x === 1 ? 1 : 0;
-            //         break;
-            //     case 1 :                                           // case scissor
-            //         w = x === 0 ? 0 : 1;
-            //         break;
-            //     case 2 :                                           // case stone
-            //         w = x === 0 ? 1 : 0;
-            //         break;
-            // }
             addPoint(w);
         }
     })
